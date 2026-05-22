@@ -1,0 +1,98 @@
+<p align="center">
+  <img src="./assets/icon-source.svg" width="112" height="112" alt="PR Latest First icon">
+</p>
+
+<h1 align="center">PR Latest First</h1>
+
+<p align="center">
+  A small Chrome extension that brings the latest GitHub pull request comments
+  to the top of the Conversation timeline.
+</p>
+
+<p align="center">
+  <img alt="Manifest V3" src="https://img.shields.io/badge/Chrome-Manifest%20V3-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white">
+  <img alt="GitHub PRs" src="https://img.shields.io/badge/GitHub-Pull%20Requests-24292F?style=for-the-badge&logo=github&logoColor=white">
+  <img alt="Zero dependencies" src="https://img.shields.io/badge/Dependencies-Zero-1F883D?style=for-the-badge">
+</p>
+
+## Why
+
+Agent reviews can turn a pull request Conversation page into a long feed.
+GitHub appends recent comments near the bottom, so reading the latest feedback
+often means scrolling through earlier activity first.
+
+PR Latest First keeps the pull request description and comment box in place,
+then raises loaded comment and review-comment entries above older timeline
+activity. The newest loaded comment appears first.
+
+```text
+Pull request description
+
+Latest comment
+Newer review comment
+Older comment
+
+Other timeline activity
+Comment composer
+```
+
+## Highlights
+
+| | |
+| --- | --- |
+| Latest first | Sorts loaded PR comments and review comments by their timestamps. |
+| Conversation only | Leaves Commits, Checks, and Files changed pages untouched. |
+| GitHub aware | Watches for timeline nodes GitHub inserts after the initial page load. |
+| Lightweight | Uses one Manifest V3 content script and no build step. |
+
+## Install From Source
+
+1. Clone or download this repository.
+2. Open `chrome://extensions` in Chrome.
+3. Enable Developer mode.
+4. Select Load unpacked.
+5. Choose the repository directory.
+6. Reload a GitHub pull request Conversation page.
+
+## How It Works
+
+The content script is scoped to GitHub pull request URLs. On the exact
+Conversation route, it:
+
+1. Finds GitHub timeline items under the pull request discussion.
+2. Detects timeline items that contain comments or review comments.
+3. Reads the latest timestamp inside each loaded comment item.
+4. Moves comment items above other timeline activity in latest-first order.
+5. Repeats the sort when GitHub updates the timeline DOM.
+
+## Files
+
+| Path | Purpose |
+| --- | --- |
+| `manifest.json` | Manifest V3 extension metadata and GitHub content script scope. |
+| `content.js` | Timeline detection, sorting, and DOM update observation. |
+| `assets/` | Source icon and Chrome extension PNG icons. |
+
+## Limits
+
+- GitHub can change its private PR page markup. If the timeline selectors move,
+  update `content.js`.
+- The extension sorts items that GitHub has already loaded into the page. Items
+  loaded later are sorted when they enter the DOM.
+- The pull request description stays above the reordered timeline by design.
+
+## Development
+
+There is no dependency install or build command.
+
+```bash
+node --check content.js
+node -e "JSON.parse(require('fs').readFileSync('manifest.json', 'utf8'))"
+```
+
+After changing extension files, reload PR Latest First from
+`chrome://extensions` and refresh the GitHub PR page.
+
+## License
+
+MIT
