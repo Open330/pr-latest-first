@@ -128,3 +128,8 @@ After changing extension files, reload PR Latest First from
 ## License
 
 MIT
+
+## Privacy
+
+PR Latest First does not include analytics or transmit GitHub pull request
+data. The full policy is in [`PRIVACY.md`](./PRIVACY.md).
