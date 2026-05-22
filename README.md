@@ -25,16 +25,14 @@ PR Latest First keeps the pull request description and comment box in place,
 then raises loaded comment and review-comment entries above older timeline
 activity. The newest loaded comment appears first.
 
-```text
-Pull request description
-
-Latest comment
-Newer review comment
-Older comment
-
-Other timeline activity
-Comment composer
-```
+| GitHub default | With PR Latest First |
+| --- | --- |
+| Pull request description | Pull request description |
+| Earlier timeline activity | **Latest comment** |
+| Older comments and reviews | **Newer review comment** |
+| Latest agent feedback | Older comments and reviews |
+| Comment composer | Other timeline activity |
+|  | Comment composer |
 
 ## Highlights
 
@@ -44,6 +42,22 @@ Comment composer
 | Conversation only | Leaves Commits, Checks, and Files changed pages untouched. |
 | GitHub aware | Watches for timeline nodes GitHub inserts after the initial page load. |
 | Lightweight | Uses one Manifest V3 content script and no build step. |
+
+## Quickstart for Agents
+
+<div><img src="https://quickstart-for-agents.vercel.app/api/header.svg?theme=codex&title=Install+PR+Latest+First&lang=Agents" width="100%" alt="Quickstart for Agents terminal header"></div>
+
+```text
+Install PR Latest First from https://github.com/Open330/pr-latest-first.
+
+Clone the repository, inspect its Manifest V3 files, and help me load it as an
+unpacked Chrome extension in Chrome. Do not publish or change the extension
+unless I ask. Tell me which cloned directory to select in chrome://extensions,
+then explain how to verify that latest comments move to the top on a GitHub pull
+request Conversation page.
+```
+
+<div><img src="https://quickstart-for-agents.vercel.app/api/footer.svg?theme=codex&project=pr-latest-first&agent=Agents" width="100%" alt="Quickstart for Agents terminal footer"></div>
 
 ## Install From Source
 
