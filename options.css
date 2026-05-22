@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light dark;
+  --accent: #1f883d;
+  --background: #f6f8fa;
+  --border: #d0d7de;
+  --muted: #57606a;
+  --surface: #ffffff;
+  --text: #1f2328;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 720px;
+  padding: 48px 24px;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+header img {
+  border-radius: 14px;
+  flex: none;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+header p {
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+form {
+  display: grid;
+  gap: 18px;
+}
+
+fieldset {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 20px;
+}
+
+legend {
+  font-size: 15px;
+  font-weight: 650;
+  padding: 0 6px;
+}
+
+.mode-option,
+.toggle-option {
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  gap: 14px;
+  min-height: 72px;
+  padding: 14px;
+}
+
+.toggle-option {
+  justify-content: space-between;
+}
+
+.mode-option:has(input:checked) {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.mode-option span,
+.toggle-option span {
+  display: grid;
+  gap: 4px;
+}
+
+strong {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+small {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+input {
+  accent-color: var(--accent);
+  flex: none;
+  height: 18px;
+  margin: 0;
+  width: 18px;
+}
+
+#show-jump-controls {
+  height: 20px;
+  width: 20px;
+}
+
+#save-status {
+  color: var(--muted);
+  min-height: 20px;
+  padding: 0 2px;
+}
+
+@media (max-width: 520px) {
+  main {
+    padding: 28px 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0d1117;
+    --border: #30363d;
+    --muted: #8b949e;
+    --surface: #161b22;
+    --text: #e6edf3;
+  }
+}

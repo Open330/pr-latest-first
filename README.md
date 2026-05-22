@@ -39,8 +39,10 @@ activity. The newest loaded comment appears first.
 | | |
 | --- | --- |
 | Latest first | Sorts loaded PR comments and review comments by their timestamps. |
+| Open modes | Switch between latest-first ordering and GitHub order with bottom entry. |
 | Conversation only | Leaves Commits, Checks, and Files changed pages untouched. |
 | GitHub aware | Watches for timeline nodes GitHub inserts after the initial page load. |
+| Page jumps | Optionally show top and bottom buttons on the Conversation page. |
 | Lightweight | Uses one Manifest V3 content script and no build step. |
 
 ## Quickstart for Agents
@@ -61,7 +63,7 @@ request Conversation page.
 
 ## Install From Release
 
-1. Download `pr-latest-first-v0.1.0.zip` from the latest GitHub Release.
+1. Download `pr-latest-first-v0.2.0.zip` from the latest GitHub Release.
 2. Unzip it to a local directory.
 3. Open `chrome://extensions` in Chrome.
 4. Enable Developer mode.
@@ -89,12 +91,18 @@ Conversation route, it:
 4. Moves comment items above other timeline activity in latest-first order.
 5. Repeats the sort when GitHub updates the timeline DOM.
 
+The extension options page can keep GitHub timeline order and start new
+Conversation visits at the bottom instead. It also controls whether fixed page
+jump buttons are shown.
+
 ## Files
 
 | Path | Purpose |
 | --- | --- |
 | `manifest.json` | Manifest V3 extension metadata and GitHub content script scope. |
 | `content.js` | Timeline detection, sorting, and DOM update observation. |
+| `content.css` | Fixed jump control styling on pull request Conversation pages. |
+| `options.*` | Mode and controller settings page. |
 | `assets/` | Source icon and Chrome extension PNG icons. |
 
 ## Limits

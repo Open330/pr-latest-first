@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PR Latest First Options</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="assets/icon-128.png" width="56" height="56" alt="">
+        <div>
+          <h1>PR Latest First</h1>
+          <p>Pull request Conversation behavior</p>
+        </div>
+      </header>
+
+      <form id="options-form">
+        <fieldset>
+          <legend>Open mode</legend>
+
+          <label class="mode-option">
+            <input type="radio" name="mode" value="latest-first">
+            <span>
+              <strong>Latest comments first</strong>
+              <small>Move loaded comment and review entries above older activity.</small>
+            </span>
+          </label>
+
+          <label class="mode-option">
+            <input type="radio" name="mode" value="start-at-bottom">
+            <span>
+              <strong>Start at bottom</strong>
+              <small>Keep GitHub order and open the Conversation near the composer.</small>
+            </span>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Controller</legend>
+
+          <label class="toggle-option">
+            <span>
+              <strong>Show jump buttons</strong>
+              <small>Display fixed top and bottom buttons on Conversation pages.</small>
+            </span>
+            <input id="show-jump-controls" type="checkbox">
+          </label>
+        </fieldset>
+
+        <p id="save-status" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
