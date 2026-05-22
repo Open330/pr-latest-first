@@ -59,6 +59,16 @@ request Conversation page.
 
 <div><img src="https://quickstart-for-agents.vercel.app/api/footer.svg?theme=codex&project=pr-latest-first&agent=Agents" width="100%" alt="Quickstart for Agents terminal footer"></div>
 
+## Install From Release
+
+1. Download `pr-latest-first-v0.1.0.zip` from the latest GitHub Release.
+2. Unzip it to a local directory.
+3. Open `chrome://extensions` in Chrome.
+4. Enable Developer mode.
+5. Select Load unpacked.
+6. Choose the unzipped `pr-latest-first` directory.
+7. Reload a GitHub pull request Conversation page.
+
 ## Install From Source
 
 1. Clone or download this repository.
